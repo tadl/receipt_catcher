@@ -4,7 +4,6 @@ require 'json'
 require 'cupsffi'
 require 'imgkit'
 require 'fastimage'
-require 'securerandom'
 
 route :get, :post, '/' do
 	content_type :json
@@ -25,7 +24,7 @@ route :get, :post, '/' do
 		html_file = Tempfile.new(['html_content', '.html'])
 		image_file = Tempfile.new(['image', '.jpg'])
 		File.open(html_file.path, 'w') { |file| file.write(html_content) }
-		image = IMGKit.new(File.new(html_file.path), width: 210)
+		image = IMGKit.new(File.new(html_file.path), :quality => 100, :width => 210)
 		file = image.to_file(image_file.path)
 		dimensions = FastImage.size(image_file.path)
 		pagesize = 'Custom.300x' + dimensions[1].to_s
