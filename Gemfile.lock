@@ -9,7 +9,7 @@ GEM
       addressable (~> 2.3, >= 2.3.5)
     ffi (1.9.6)
     imgkit (1.6.0)
-    json (1.8.1)
+    json (1.8.2)
     multi_json (1.10.1)
     rack (1.6.0)
     rack-protection (1.5.3)
