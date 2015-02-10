@@ -30,11 +30,11 @@ route :get, :post, '/' do
 		pagesize = 'Custom.300x' + dimensions[1].to_s
 		job = receipt_printer.print_file(image_file.path,{'PageSize' => pagesize})
 		message = {:message => 'Correct parameters'}	
+		html_file.unlink
+	    image_file.unlink
 	else
 		message = {:message => 'Error. Incomplete parameters'}
 	end
-	html_file.unlink
-	image_file.unlink
 	return message.to_json
 
 end
