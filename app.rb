@@ -11,7 +11,7 @@ route :get, :post, '/' do
 	if params[:title] && params[:shelving_location] && params[:call_number]
 		printers = CupsPrinter.get_all_printer_names
 		# Need way to map OPAC location to priner perhaps by name or device-uri but for now hard coding
-		receipt_printer = CupsPrinter.new(printers[1])
+		receipt_printer = CupsPrinter.new(printers[0])
 		title = '<span class="title">'+ params[:title] +'</span><br>'
 		if params[:author]
 			author = '<span class="author">-'+ params[:author] +'</span></br>'
