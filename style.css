@@ -3,12 +3,20 @@ body{
 
 }
 
+#container{
+
+width: 200px;
+
+
+}
+
 .author{
 }
 
 .title{
 	font-weight: bold;
 	font-family: arial;
+	word-wrap: break-word;	
 }
 
 .location{
